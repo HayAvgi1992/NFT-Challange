@@ -1,0 +1,106 @@
+.main {
+    /* border: 1px solid red; */
+    min-height: 50vh;
+}
+
+.mainContainer {
+    /* border: 1px solid yellow; */
+
+    display: flex;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #fff;
+}
+
+.punkHighlight {
+    /* border: 1px solid green; */
+    /* height: fit-content; */
+    flex: 0.25;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.punkContainer {
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    margin: 20px 20px 0px 0px;
+}
+
+.selectedPunk {
+    /* border: 1px solid red; */
+    /* margin: 10px; */
+    object-fit: contain;
+    max-width: min(60vw, 50vh);
+    max-height: 60vh;
+}
+
+.punkDetails {
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 0.75
+}
+
+.title {
+    /* border: 1px solid red; */
+    font-size: 96px;
+    font-weight: 800;
+}
+
+.itemNumber {
+    color: #a1a5b0;
+    align-self: center;
+    font-size: 72px;
+}
+
+.owner {
+    display: flex;
+    margin: 10px 0;
+    height: 50px;
+}
+
+.owner > div {
+    margin: 0 5px;
+}
+
+.ownerImageContainer {
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    object-fit: contain;
+    overflow: hidden;
+}
+
+.ownerImageContainer > img {
+    height: 100%;
+    width: 100%;
+}
+
+.ownerDetails {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    /* border: 1px solid red; */
+
+}
+
+.ownerNameAndHandle {
+    /* border: 1px solid red; */
+    flex: 1;
+}
+
+.ownerLink {
+    border: 1px solid #fff;
+    padding: 12px;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    margin: 0 0 0 10px;
+}
+
+.ownerLink > img {
+    height: 100%;
+    width: 100%;
+}
