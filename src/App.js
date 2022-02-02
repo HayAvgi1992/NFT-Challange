@@ -10,9 +10,14 @@ import Main from './components/Main';
 function App() {
   const [punkListData, setPunkListData] = useState([])
   const [selectedPunk, setSelectedPunk] = useState(0)
+  const [containerTheme, setContainerTheme] = useState(true)
 
   const changePunk = punkId => {
     setSelectedPunk(punkId)
+  }
+
+  const setAppTheme = () => {
+    setContainerTheme(!containerTheme)
   }
 
   useEffect(() => {
@@ -26,14 +31,14 @@ function App() {
   }, [])
 
   return (
-   <div className='app'>
-      <Header />
+   <div className={['app', containerTheme ? 'darkMode': 'lightMode'].join(" ")}>
+      <Header setAppTheme={setAppTheme} />
       
       {/* Only when we have punks return from our api call */}
       {punkListData.length > 0 && 
       <>
-        <Main selectedPunk={selectedPunk} punkListData={punkListData} />
-        <PunkList punkListData={punkListData} changePunk={changePunk} />
+        <Main selectedPunk={selectedPunk} punkListData={punkListData} containerTheme={containerTheme}/>
+        <PunkList punkListData={punkListData} changePunk={changePunk}/>
       </>
       }
    </div>
