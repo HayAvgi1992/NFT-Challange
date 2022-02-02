@@ -3,7 +3,7 @@ import './Header.css'
 import punkLogo from '../assets/header/cryptopunk-logo.png'
 import searchIcon from '../assets/header/search.png'
 import themeSwitchIcon from '../assets/header/theme-switch.png'
-function Header() {
+function Header({ setAppTheme }) {
     return (
         <div className='header'>
             <div className='logoContainer'>
@@ -23,7 +23,7 @@ function Header() {
                 <p>Create</p>
             </div>
 
-            <div className='headerActions'>
+            <div className='headerActions' onClick={()=> setAppTheme()}>
                 <div className='themeSwitchContainer'>
                     <img src={themeSwitchIcon} className='switchlogo' alt=''/>
                 </div>
