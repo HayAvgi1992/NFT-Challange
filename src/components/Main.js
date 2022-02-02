@@ -4,8 +4,9 @@ import moreIcon from '../assets/owner/more.png'
 import twitterLogo from '../assets/owner/twitter.png'
 import './Main.css'
 
-function Main({ selectedPunk, punkListData }) {
+function Main({ selectedPunk, punkListData, containerTheme }) {
     const [activePunk, setActivePunk] = useState(punkListData[0])
+    const selectedTheme = containerTheme ? 'lightName' : 'darkName'
 
     useEffect (() => {
         setActivePunk(punkListData[selectedPunk])
@@ -27,7 +28,8 @@ function Main({ selectedPunk, punkListData }) {
                 </div>
 
                 <div className='punkDetails' style={{ color: '#fff' }}>
-                    <div className='title'>
+                    <div className={['title', selectedTheme].join(" ")}>
+                    {/* <div className={'title'}> */}
                         {activePunk.name}
                         {/* Bandana Punk */}
                         <span className='itemNumber'>.#{activePunk.token_id}</span>
@@ -40,7 +42,7 @@ function Main({ selectedPunk, punkListData }) {
                             />
                         </div>
 
-                        <div className='ownerDetails'>
+                        <div className={['ownerDetails', selectedTheme].join(" ")}>
                             <div className='ownerNameAndHandle'>
                                 <div>{activePunk.owner.address}</div>
                                 <div className='ownerHandle'>@HayAvgi</div>
